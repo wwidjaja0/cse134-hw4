@@ -8,6 +8,8 @@
         <meta name="title" content="wid's work">
         <meta name="description"
             content="A collection of my past work and projects.">
+        <link rel="preload" href="assets/fonts/DMSans-Regular.ttf" as="font"
+            type="font/ttf" crossorigin="anonymous">
 
         <!-- Open Graph -->
         <meta property="og:url" content="https://wwidjaja.dev/">
@@ -34,75 +36,99 @@
             href="assets/icons/favicon-16x16.png">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css" media="screen">
         <link rel="manifest" href="assets/icons/site.webmanifest">
+        <style>
+            /* to avoid "Default styles for h1 elements are changing" */
+            h1 {
+                font-size: 2.5rem;
+            }
+        </style>
     </head>
     <body>
         <header>
-            <a href="/">
-                <img src="favicon.ico" alt="Widjaja's Logo" width="48px"
-                    height="48px">
-                <h1>William Widjaja</h1>
-            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html">about</a></li>
-                    <li><a href="jungle.html">jungle</a></li>
-                    <li><a href="now.html">now</a></li>
-                    <li><a href="usual.html">usual</a></li>
-                    <li><a href="work.html">work</a></li>
-                </ul>
+                <top-nav>
+                    <a id="brand" href="/">
+                        <img src="/favicon.ico" alt="Widjaja's Logo" width="48px"
+                            height="48px">
+                        <h1 hidden>William Widjaja</h1>
+                        <span><span>William</span> Widjaja</span>
+                    </a>
+                </top-nav>
+                <bottom-nav>
+                    <input type="checkbox" id="menu-toggle" hidden>
+                    <label for="menu-toggle" class="hamburger"
+                        aria-label="Toggle menu">
+                        <svg viewBox="0 0 100 40" width="30" height="30"
+                            aria-hidden="true">
+                            <rect width="100" height="10"></rect>
+                            <rect y="30" width="100" height="10"></rect>
+                            <rect y="60" width="100" height="10"></rect>
+                        </svg>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="garden.html">garden</a></li>
+                        <li><a href="now.html">now</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                        <li><a href="work.html">work</a></li>
+                    </ul>
+                </bottom-nav>
             </nav>
         </header>
         <main>
-            <main-header>
-                <h2>/work</h2>
-                <p>Here is a collection of my past works and projects.</p>
-            </main-header>
-            <form method="GET">
-                <search>
-                    <label for="search-box">Search by title</label>
-                    <input id="search-box" name="query" type="search"
-                        placeholder="Look for a project...">
-
-                    <fieldset>
-                        <legend>Filter by tags</legend>
-                        <label><input type="checkbox" name="tags"
-                                value="web">Web</label>
-                        <label><input type="checkbox" name="tags"
-                                value="ai">AI</label>
-                        <label><input type="checkbox" name="tags"
-                                value="music">Music</label>
-                        <label><input type="checkbox" name="tags"
-                                value="other">Other</label>
-                    </fieldset>
-
-                    <button type="submit">Search</button>
-                </search>
-            </form>
-            <section>
-                <h3>Current</h3>
-                <p>This is a placeholder, there is a hidden template for a card below me.</p>
-                <template>
-                    <h4>Title</h4>
-                    <p>Description goes here.</p>
-                    <img src alt>
-                    <div>
-                        <p>Categories go here.</p>
-                    </div>
-                </template>
-            </section>
-            <hr>
+            <div>
+                <main-header>
+                    <h2>/work</h2>
+                    <p>Here is a collection of my past works and projects.</p>
+                </main-header>
+                <form method="GET">
+                    <search>
+                        <label for="search-box">Search by title</label>
+                        <input id="search-box" name="query" type="search"
+                            placeholder="Look for a project...">
+                        <fieldset>
+                            <legend>Filter by tags</legend>
+                            <label><input type="checkbox" name="tags"
+                                    value="web">Web</label>
+                            <label><input type="checkbox" name="tags"
+                                    value="ai">AI</label>
+                            <label><input type="checkbox" name="tags"
+                                    value="music">Music</label>
+                            <label><input type="checkbox" name="tags"
+                                    value="other">Other</label>
+                        </fieldset>
+                        <button type="submit">Search</button>
+                    </search>
+                </form>
+                <section>
+                    <h3>Current</h3>
+                    <p>This is a placeholder, there is a hidden template for a
+                        card
+                        below me.</p>
+                    <template>
+                        <h4>Title</h4>
+                        <p>Description goes here.</p>
+                        <img src alt>
+                        <div>
+                            <p>Categories go here.</p>
+                        </div>
+                    </template>
+                </section>
+            </div>
+            <footer>
+                <nav>
+                    <ul>
+                        <li><a href="links.html">links</a></li>
+                        <li><a href="usual.html">usual</a></li>
+                        <li><a href="verify.html">verify</a></li>
+                        <li><a href="wish.html">wish</a></li>
+                    </ul>
+                </nav>
+                <p>&copy; 2025 William Widjaja</p>
+                <p>i'll take a browser cookie... and eat it</p>
+            </footer>
         </main>
-        <footer>
-            <ul>
-                <li><a href="links.html">links</a></li>
-                <li><a href="contact.html">contact</a></li>
-                <li><a href="verify.html">verify</a></li>
-                <li><a href="wish.html">wish</a></li>
-            </ul>
-            <p>&copy; 2025 William Widjaja</p>
-            <p>for my next trick, i'll take a browser cookie... and eat it</p>
-        </footer>
     </body>
 </html>

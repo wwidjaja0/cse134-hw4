@@ -8,6 +8,8 @@
         <meta name="title" content="about wid">
         <meta name="description"
             content="Student, engineer, leader. Known for being 'Widjaja'.">
+        <link rel="preload" href="assets/fonts/DMSans-Regular.ttf" as="font"
+            type="font/ttf" crossorigin="anonymous">
 
         <!-- Open Graph -->
         <meta property="og:url" content="https://wwidjaja.dev/">
@@ -34,37 +36,56 @@
             href="assets/icons/favicon-16x16.png">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.css" media="screen">
         <link rel="manifest" href="assets/icons/site.webmanifest">
+        <style>
+            /* to avoid "Default styles for h1 elements are changing" */
+            h1 {
+                font-size: 2.5rem;
+            }
+        </style>
     </head>
     <body>
         <header>
-            <a href="/">
-                <img src="favicon.ico" alt="Widjaja's Logo" width="48px"
-                    height="48px">
-                <h1>William Widjaja</h1>
-            </a>
             <nav>
-                <ul>
-                    <li><a href="about.html">about</a></li>
-                    <li><a href="jungle.html">jungle</a></li>
-                    <li><a href="now.html">now</a></li>
-                    <li><a href="usual.html">usual</a></li>
-                    <li><a href="work.html">work</a></li>
-                </ul>
+                <top-nav>
+                    <a id="brand" href="/">
+                        <img src="/favicon.ico" alt="Widjaja's Logo" width="48px"
+                            height="48px">
+                        <h1 hidden>William Widjaja</h1>
+                        <span><span>William</span> Widjaja</span>
+                    </a>
+                </top-nav>
+                <bottom-nav>
+                    <input type="checkbox" id="menu-toggle" hidden>
+                    <label for="menu-toggle" class="hamburger"
+                        aria-label="Toggle menu">
+                        <svg viewBox="0 0 100 40" width="30" height="30"
+                            aria-hidden="true">
+                            <rect width="100" height="10"></rect>
+                            <rect y="30" width="100" height="10"></rect>
+                            <rect y="60" width="100" height="10"></rect>
+                        </svg>
+                    </label>
+                    <ul class="menu">
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="garden.html">garden</a></li>
+                        <li><a href="now.html">now</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                        <li><a href="work.html">work</a></li>
+                    </ul>
+                </bottom-nav>
             </nav>
         </header>
         <main>
-            <main-header>
-                <h2>/about</h2>
-            </main-header>
-            <article>
-                <div>
-                    <picture>
-                        <source srcset="assets/imgs/me.webp" type="image/webp">
-                        <img src="assets/imgs/me.jpg" alt width="200px"
-                            height="200px" loading="lazy">
-                    </picture>
+            <div>
+                <main-header>
+                    <h2>/about</h2>
+                </main-header>
+                <div id="profile">
+                    <img src="assets/imgs/me.jpg"
+                        alt="A professional shot of Widjaja." width="200px"
+                        height="200px">
                     <section>
                         <h3>William Widjaja</h3>
                         <p>Pronouns: he/him</p>
@@ -95,19 +116,19 @@
                     thinking aspect for me as well as a social aspect is
                     poker.</p>
                 <p>I'm usually always doing something and learning another.</p>
-                <p></p>
-            </article>
-            <hr>
+            </div>
+            <footer>
+                <nav>
+                    <ul>
+                        <li><a href="links.html">links</a></li>
+                        <li><a href="usual.html">usual</a></li>
+                        <li><a href="verify.html">verify</a></li>
+                        <li><a href="wish.html">wish</a></li>
+                    </ul>
+                </nav>
+                <p>&copy; 2025 William Widjaja</p>
+                <p>say my name</p>
+            </footer>
         </main>
-        <footer>
-            <ul>
-                <li><a href="links.html">links</a></li>
-                <li><a href="contact.html">contact</a></li>
-                <li><a href="verify.html">verify</a></li>
-                <li><a href="wish.html">wish</a></li>
-            </ul>
-            <p>&copy; 2025 William Widjaja</p>
-            <p>say my name</p>
-        </footer>
     </body>
 </html>
