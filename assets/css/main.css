@@ -1,0 +1,10 @@
+header, footer {
+    border: 1px solid black;
+}
+
+main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
