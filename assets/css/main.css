@@ -249,6 +249,21 @@ ol ol {
     padding-left: 2rem;
 }
 
+button {
+    background-color: var(--accent-color, #ff0059);
+    color: var(--text-color, #ffffff);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--primary-color, #baffe7);
+        color: var(--text-color, #ffffff);
+    }
+}
+
 /* Give nested lists an indent */
 :is(ul, ol) :is(ul, ol) {
     padding-left: 2rem;
