@@ -80,6 +80,16 @@
                     border: 1px dashed black;
                     border-radius: 0.25rem;
                 }
+
+                output {
+                    margin-inline-start: 0.5rem;
+                    width: fit-content;
+                    padding: 0 1rem;
+
+                    &[name*="error"] {
+                        background-color: red;
+                    }
+                }
             }
         </style>
     </head>
@@ -142,12 +152,16 @@
                             </label>
                             <input id="name" name="name" type="text"
                                 placeholder="Your full name" required>
+                            <output name="name_error" for="name"></output>
+                            <output name="name_info" for="name"></output>
                         </form-field>
                         <form-field>
                             <label for="email" class="required-label">Your
                                 email: </label>
                             <input id="email" name="email" type="email"
                                 placeholder="Your email" required>
+                            <output name="email_error" for="email"></output>
+                            <output name="email_info" for="email"></output>
                         </form-field>
                         <form-field>
                             <label for="message" class="required-label">Your
@@ -156,6 +170,8 @@
                                 minlength="5"
                                 placeholder="Write me a message..."
                                 required></textarea>
+                            <output name="message_error" for="message"></output>
+                            <output name="message_info" for="message"></output>
                         </form-field>
                         <input id="possible_bot" name="possible_bot"
                             type="hidden" value="true">
