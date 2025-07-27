@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    init();
+    initTheme();
 });
 
-function init() {
+function initTheme() {
     const root = document.documentElement;
     const colorScheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;

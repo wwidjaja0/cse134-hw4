@@ -38,8 +38,6 @@
         <link rel="manifest" href="assets/icons/site.webmanifest">
         <link rel="preload" href="assets/fonts/DMSans-Regular.ttf" as="font"
             type="font/ttf" crossorigin="anonymous">
-        <script src="scripts/form.js" defer></script>
-        <script src="scripts/main.js" defer></script>
         <style>
             /* to avoid "Default styles for h1 elements are changing" */
             h1 {
@@ -117,6 +115,8 @@
                 }
             }
         </style>
+        <script src="scripts/form.js" defer></script>
+        <script src="scripts/main.js" defer></script>
     </head>
     <body>
         <header>
@@ -206,7 +206,7 @@
                         <input id="possible_bot" name="possible_bot"
                             type="hidden" value="true">
                         <input id="form_errors" name="form_errors"
-                            type="hidden" value>
+                            type="hidden" value="">
                         <button type="submit">Submit</button>
                     </fieldset>
                 </form>
