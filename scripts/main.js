@@ -29,6 +29,13 @@ function initTheme() {
 
     const themeToggleBtn = document.querySelector('[data-theme-toggle]');
     themeToggleBtn.hidden = false;
+
+    if (colorScheme === 'dark') {
+        themeToggleBtn.querySelector('img').src = '/icons/sun.svg';
+    } else {
+        themeToggleBtn.querySelector('img').src = '/icons/moon.svg';
+    }
+
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = root.getAttribute('data-theme');
         if (currentTheme === 'dark') {
