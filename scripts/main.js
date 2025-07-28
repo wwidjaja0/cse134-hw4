@@ -31,9 +31,9 @@ function initTheme() {
     themeToggleBtn.hidden = false;
 
     if (colorScheme === 'dark') {
-        themeToggleBtn.querySelector('img').src = '/icons/sun.svg';
+        themeToggleBtn.querySelector('img').src = 'assets/icons/sun.svg';
     } else {
-        themeToggleBtn.querySelector('img').src = '/icons/moon.svg';
+        themeToggleBtn.querySelector('img').src = 'assets/icons/moon.svg';
     }
 
     themeToggleBtn.addEventListener('click', () => {
