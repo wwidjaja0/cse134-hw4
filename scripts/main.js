@@ -7,11 +7,15 @@ function initTheme() {
     const colorScheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (!root.hasAttribute('data-theme') && !colorScheme) {
-        root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-    } else if (colorScheme) {
-        root.setAttribute('data-theme', colorScheme);
+    // Set initial theme: use localStorage if it exists, otherwise use system preference
+    let currentTheme;
+    if (colorScheme) {
+        currentTheme = colorScheme;
+    } else {
+        currentTheme = prefersDark ? 'dark' : 'light';
     }
+
+    root.setAttribute('data-theme', currentTheme);
 
     /**
      * Gets the value of a CSS custom property.
@@ -28,24 +32,27 @@ function initTheme() {
     accentColor = getCustomStyle('--accent-color');
 
     const themeToggleBtn = document.querySelector('[data-theme-toggle]');
-    themeToggleBtn.hidden = false;
+    if (themeToggleBtn) {
+        themeToggleBtn.hidden = false;
 
-    if (colorScheme === 'dark') {
-        themeToggleBtn.querySelector('img').src = 'assets/icons/sun.svg';
-    } else {
-        themeToggleBtn.querySelector('img').src = 'assets/icons/moon.svg';
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = root.getAttribute('data-theme');
+        // Set initial icon based on current theme
         if (currentTheme === 'dark') {
-            root.setAttribute('data-theme', 'light');
-            themeToggleBtn.querySelector('img').src = 'assets/icons/moon.svg';
-            localStorage.setItem('theme', 'light');
-        } else {
-            root.setAttribute('data-theme', 'dark');
             themeToggleBtn.querySelector('img').src = 'assets/icons/sun.svg';
-            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggleBtn.querySelector('img').src = 'assets/icons/moon.svg';
         }
-    });
+
+        themeToggleBtn.addEventListener('click', () => {
+            const theme = root.getAttribute('data-theme');
+            if (theme === 'dark') {
+                root.setAttribute('data-theme', 'light');
+                themeToggleBtn.querySelector('img').src = 'assets/icons/moon.svg';
+                localStorage.setItem('theme', 'light');
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                themeToggleBtn.querySelector('img').src = 'assets/icons/sun.svg';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
 }
