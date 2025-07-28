@@ -152,7 +152,6 @@ function initForm() {
         // only add if error triggered is different
         if (errorMsg !== formErrors[formErrors.length - 1]) {
             formErrors.push(errorMsg);
-            console.log(formErrors);
         }
     }
 
